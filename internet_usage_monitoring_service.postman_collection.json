@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "19366e5b-7492-4117-8273-253fb0a9917d",
+		"name": "internet_usage_monitoring_service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "14112596"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/analytics?date=24122022&limit=10&page=1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/analytics?date=24122022&limit=10&page=1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"analytics"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "24122022"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/user/search?name=\"john\"",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user/search?name=\"john\"",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "\"john\""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

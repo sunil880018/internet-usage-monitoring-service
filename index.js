@@ -3,12 +3,8 @@ import { dbConnection } from "./database/db.js";
 import bodyParser from "body-parser";
 import { apiRequestLimiter } from "./middleware/apiRateLimiter.js";
 import { CONFIG } from "./config/config.js";
-import {
-  UnauthenticatedError,
-  NotFoundError,
-  BadRequestError,
-  UnauthorizedError,
-} from "./errors/index.js";
+import { search_user_and_get_internet_usage } from "./controllers/search_user.js";
+import { search_top_user_and_get_internet_usage } from "./controllers/search_top_user_internet_usage.js";
 
 dbConnection();
 const app = express();
@@ -18,19 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(apiRequestLimiter);
 
-app.get("/", (req, res) => {
-  const unauthenticated = new UnauthenticatedError("unauthenticated error");
-  const notFoundError = new NotFoundError("not found error");
-  const badRequestError = new BadRequestError("badRequestError error");
-  const unauthorizedError = new UnauthorizedError("UnauthorizedError error");
-  const errorObj ={
-    unauthenticated,
-    notFoundError,
-    badRequestError,
-    unauthorizedError
-  };
-  res.send(errorObj);
-});
+app.get("/user/search", search_user_and_get_internet_usage);
+app.get("/analytics", search_top_user_and_get_internet_usage);
 
 app.listen(PORT, () => {
   console.log(`server run at ${PORT}`);
