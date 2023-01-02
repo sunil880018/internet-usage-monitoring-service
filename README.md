@@ -4,7 +4,7 @@ Internet Usage Monitoring Service
 
 
 
-## install all the dependencies , type the below command
+## install all the dependencies, type the below command
 
 
 npm install
@@ -29,12 +29,13 @@ DB_URL = "mongodb://127.0.0.1:27017/internet_usage_db"
 npm run dev
 
 
-## Hit the edpoints in your browser
+## Hit the endpoints in your browser
 
 
 
-http://localhost:3000/user/search?name="john"
-http://localhost:3000/analytics?date?24122022&limit=100&page=1
+#### http://localhost:3000/user/search?name="john"
+
+#### http://localhost:3000/analytics?date?24122022&limit=100&page=1
 
 
 
